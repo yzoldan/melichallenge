@@ -11,7 +11,7 @@ import XCTest
 class MockURLProtocol: URLProtocol {
     
     static var stubResponseData: Data?
-    static var error: Error?
+    static var responseCode = 200
     
     override class func canInit(with request: URLRequest) -> Bool {
         return true
@@ -31,21 +31,17 @@ class MockURLProtocol: URLProtocol {
         guard let client = client else { return }
         
         do {
-            if let error = MockURLProtocol.error {
-                client.urlProtocol(self, didFailWithError: error)
-            } else {
-                let response = try XCTUnwrap(HTTPURLResponse(
-                    url: XCTUnwrap(request.url),
-                    statusCode: 200,
-                    httpVersion: "HTTP/1.1",
-                    headerFields: nil
-                ))
-                client.urlProtocol(self,
-                                   didReceive: response,
-                                   cacheStoragePolicy: .notAllowed
-                )
-                client.urlProtocol(self, didLoad: MockURLProtocol.stubResponseData ?? Data())
-            }
+            let response = try XCTUnwrap(HTTPURLResponse(
+                url: XCTUnwrap(request.url),
+                statusCode: MockURLProtocol.responseCode,
+                httpVersion: "HTTP/1.1",
+                headerFields: nil
+            ))
+            client.urlProtocol(self,
+                               didReceive: response,
+                               cacheStoragePolicy: .notAllowed
+            )
+            client.urlProtocol(self, didLoad: MockURLProtocol.stubResponseData ?? Data())
         } catch {
             client.urlProtocol(self, didFailWithError: error)
         }

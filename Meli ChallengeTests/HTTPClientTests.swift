@@ -26,7 +26,7 @@ class HTTPClientTests: XCTestCase {
         sut = nil
         endpoint = nil
         MockURLProtocol.stubResponseData = nil
-        MockURLProtocol.error = nil
+        MockURLProtocol.responseCode = 200
     }
     
     private func setupSuccessResponse() throws {
@@ -36,9 +36,11 @@ class HTTPClientTests: XCTestCase {
         endpoint = Endpoint(baseURL: "test.com", path: "", method: .post, body: ["test": "ok"])
     }
     
-    private func setFailingResponse() {
-        
+    private func setFailingResponse(withCode code: Int) {
+        MockURLProtocol.responseCode = code
+        endpoint = Endpoint(baseURL: "test.com", path: "", method: .get)
     }
+    
     func testHTTPClient_WhenGivenSuccesfullResponse_ReturnSuccess() async throws {
         // Arrange
         try setupSuccessResponse()
@@ -82,10 +84,32 @@ class HTTPClientTests: XCTestCase {
     
     func testHTTPClient_WhenGivenUnauthorizedResponse_ReturnsCorrectError() async {
         // Arrange
-        
+        setFailingResponse(withCode: 401)
         // Act
+        let result = await sut.sendRequest(endpoint: endpoint, responseModel: MockModel.self)
         
         // Assert
+        switch result {
+        case .success(_):
+            XCTFail("When given error code should fail")
+        case .failure(let error):
+            XCTAssertEqual(error, RequestError.unauthorized)
+        }
+    }
+    
+    func testHTTPClient_WhenGivenUnexpectedResponse_ReturnsCorrectError() async {
+        // Arrange
+        setFailingResponse(withCode: 418)
+        // Act
+        let result = await sut.sendRequest(endpoint: endpoint, responseModel: MockModel.self)
+        
+        // Assert
+        switch result {
+        case .success(_):
+            XCTFail("When given error code should fail")
+        case .failure(let error):
+            XCTAssertEqual(error, RequestError.unexpectedStatusCode)
+        }
     }
 
 }
