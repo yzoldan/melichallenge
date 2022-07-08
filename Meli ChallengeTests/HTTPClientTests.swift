@@ -33,7 +33,12 @@ class HTTPClientTests: XCTestCase {
         let successMock = MockModel.successMock
         let data = try JSONEncoder().encode(successMock)
         MockURLProtocol.stubResponseData = data
-        endpoint = Endpoint(baseURL: "test.com", path: "", method: .post, body: ["test": "ok"])
+        endpoint = Endpoint(baseURL: "test.com",
+                            path: "",
+                            queryParams: [URLQueryItem(name: "limit", value: "20"),
+                                         URLQueryItem(name: "offset", value: "40")],
+                            method: .post,
+                            body: ["test": "ok"])
     }
     
     private func setFailingResponse(withCode code: Int) {

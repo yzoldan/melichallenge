@@ -17,10 +17,20 @@ class HTTPClient {
     
     func sendRequest<T: Decodable>(endpoint: Endpoint, responseModel: T.Type) async -> Result<T, RequestError> {
         
-        guard let url = URL(string: endpoint.baseURL + endpoint.path) else {
+        var components = URLComponents()
+        components.scheme = "https"
+        if endpoint.baseURL.isEmpty {
+            return .failure(.invalidURL)
+        } else {
+            components.host = endpoint.baseURL
+        }
+        components.path = endpoint.path
+        components.queryItems = endpoint.queryParams
+        
+        guard let url = components.url else {
             return .failure(.invalidURL)
         }
-        
+                
         var request = URLRequest(url: url)
         request.httpMethod = endpoint.method.rawValue
         request.allHTTPHeaderFields = endpoint.header
