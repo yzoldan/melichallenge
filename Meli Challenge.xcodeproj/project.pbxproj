@@ -23,6 +23,9 @@
 		535AEECC287723E400E1D9FD /* MockURLProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 535AEECB287723E400E1D9FD /* MockURLProtocol.swift */; };
 		535AEECF287724BF00E1D9FD /* MockModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 535AEECE287724BF00E1D9FD /* MockModel.swift */; };
 		53A4E90A287889F800DC4B92 /* ApiManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53A4E909287889F800DC4B92 /* ApiManager.swift */; };
+		53A4E90C2878939900DC4B92 /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53A4E90B2878939900DC4B92 /* Item.swift */; };
+		53A4E910287894C300DC4B92 /* SearchResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53A4E90F287894C300DC4B92 /* SearchResponse.swift */; };
+		53A4E9122878962F00DC4B92 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53A4E9112878962F00DC4B92 /* Constants.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -63,6 +66,9 @@
 		535AEECB287723E400E1D9FD /* MockURLProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockURLProtocol.swift; sourceTree = "<group>"; };
 		535AEECE287724BF00E1D9FD /* MockModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockModel.swift; sourceTree = "<group>"; };
 		53A4E909287889F800DC4B92 /* ApiManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiManager.swift; sourceTree = "<group>"; };
+		53A4E90B2878939900DC4B92 /* Item.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Item.swift; sourceTree = "<group>"; };
+		53A4E90F287894C300DC4B92 /* SearchResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResponse.swift; sourceTree = "<group>"; };
+		53A4E9112878962F00DC4B92 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -168,6 +174,9 @@
 			isa = PBXGroup;
 			children = (
 				53A4E909287889F800DC4B92 /* ApiManager.swift */,
+				53A4E90B2878939900DC4B92 /* Item.swift */,
+				53A4E90F287894C300DC4B92 /* SearchResponse.swift */,
+				53A4E9112878962F00DC4B92 /* Constants.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -305,10 +314,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				53A4E90A287889F800DC4B92 /* ApiManager.swift in Sources */,
+				53A4E9122878962F00DC4B92 /* Constants.swift in Sources */,
+				53A4E90C2878939900DC4B92 /* Item.swift in Sources */,
 				535AEEC7287721C200E1D9FD /* RequestError.swift in Sources */,
 				535AEE942874F00B00E1D9FD /* ViewController.swift in Sources */,
 				535AEE902874F00B00E1D9FD /* AppDelegate.swift in Sources */,
 				535AEEC128771F9900E1D9FD /* HTTPClient.swift in Sources */,
+				53A4E910287894C300DC4B92 /* SearchResponse.swift in Sources */,
 				535AEE922874F00B00E1D9FD /* SceneDelegate.swift in Sources */,
 				535AEEC52877218A00E1D9FD /* RequestMethod.swift in Sources */,
 				535AEEC32877211400E1D9FD /* Endpoint.swift in Sources */,
