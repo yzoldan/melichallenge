@@ -9,7 +9,7 @@
 /* Begin PBXBuildFile section */
 		535AEE902874F00B00E1D9FD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 535AEE8F2874F00B00E1D9FD /* AppDelegate.swift */; };
 		535AEE922874F00B00E1D9FD /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 535AEE912874F00B00E1D9FD /* SceneDelegate.swift */; };
-		535AEE942874F00B00E1D9FD /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 535AEE932874F00B00E1D9FD /* ViewController.swift */; };
+		535AEE942874F00B00E1D9FD /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 535AEE932874F00B00E1D9FD /* SearchViewController.swift */; };
 		535AEE972874F00B00E1D9FD /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 535AEE952874F00B00E1D9FD /* Main.storyboard */; };
 		535AEE992874F00E00E1D9FD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 535AEE982874F00E00E1D9FD /* Assets.xcassets */; };
 		535AEE9C2874F00E00E1D9FD /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 535AEE9A2874F00E00E1D9FD /* LaunchScreen.storyboard */; };
@@ -26,6 +26,7 @@
 		53A4E90C2878939900DC4B92 /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53A4E90B2878939900DC4B92 /* Item.swift */; };
 		53A4E910287894C300DC4B92 /* SearchResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53A4E90F287894C300DC4B92 /* SearchResponse.swift */; };
 		53A4E9122878962F00DC4B92 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53A4E9112878962F00DC4B92 /* Constants.swift */; };
+		53A4E91528789A1600DC4B92 /* UIColor+Meli.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53A4E91428789A1600DC4B92 /* UIColor+Meli.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,7 +50,7 @@
 		535AEE8C2874F00B00E1D9FD /* Meli Challenge.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Meli Challenge.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		535AEE8F2874F00B00E1D9FD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		535AEE912874F00B00E1D9FD /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		535AEE932874F00B00E1D9FD /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		535AEE932874F00B00E1D9FD /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
 		535AEE962874F00B00E1D9FD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		535AEE982874F00E00E1D9FD /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		535AEE9B2874F00E00E1D9FD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -69,6 +70,7 @@
 		53A4E90B2878939900DC4B92 /* Item.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Item.swift; sourceTree = "<group>"; };
 		53A4E90F287894C300DC4B92 /* SearchResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResponse.swift; sourceTree = "<group>"; };
 		53A4E9112878962F00DC4B92 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		53A4E91428789A1600DC4B92 /* UIColor+Meli.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Meli.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -119,11 +121,12 @@
 		535AEE8E2874F00B00E1D9FD /* Meli Challenge */ = {
 			isa = PBXGroup;
 			children = (
+				53A4E91328789A0200DC4B92 /* Extensions */,
 				535AEECD2877249C00E1D9FD /* Models */,
 				535AEEBF28771F7100E1D9FD /* Network */,
 				535AEE8F2874F00B00E1D9FD /* AppDelegate.swift */,
 				535AEE912874F00B00E1D9FD /* SceneDelegate.swift */,
-				535AEE932874F00B00E1D9FD /* ViewController.swift */,
+				535AEE932874F00B00E1D9FD /* SearchViewController.swift */,
 				535AEE952874F00B00E1D9FD /* Main.storyboard */,
 				535AEE982874F00E00E1D9FD /* Assets.xcassets */,
 				535AEE9A2874F00E00E1D9FD /* LaunchScreen.storyboard */,
@@ -179,6 +182,14 @@
 				53A4E9112878962F00DC4B92 /* Constants.swift */,
 			);
 			path = Models;
+			sourceTree = "<group>";
+		};
+		53A4E91328789A0200DC4B92 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				53A4E91428789A1600DC4B92 /* UIColor+Meli.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -313,11 +324,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				53A4E91528789A1600DC4B92 /* UIColor+Meli.swift in Sources */,
 				53A4E90A287889F800DC4B92 /* ApiManager.swift in Sources */,
 				53A4E9122878962F00DC4B92 /* Constants.swift in Sources */,
 				53A4E90C2878939900DC4B92 /* Item.swift in Sources */,
 				535AEEC7287721C200E1D9FD /* RequestError.swift in Sources */,
-				535AEE942874F00B00E1D9FD /* ViewController.swift in Sources */,
+				535AEE942874F00B00E1D9FD /* SearchViewController.swift in Sources */,
 				535AEE902874F00B00E1D9FD /* AppDelegate.swift in Sources */,
 				535AEEC128771F9900E1D9FD /* HTTPClient.swift in Sources */,
 				53A4E910287894C300DC4B92 /* SearchResponse.swift in Sources */,

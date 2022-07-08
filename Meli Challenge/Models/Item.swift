@@ -12,6 +12,6 @@ struct Item: Codable {
     let title: String
     let price: Int
     let sale_price: Int?
-    let currency_id: Int
+    let currency_id: String
     let thumbnail: String
 }

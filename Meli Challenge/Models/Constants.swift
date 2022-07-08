@@ -8,5 +8,5 @@
 import Foundation
 
 struct K {
-    static let baseUrl = "https://api.mercadolibre.com"
+    static let baseUrl = "api.mercadolibre.com"
 }
