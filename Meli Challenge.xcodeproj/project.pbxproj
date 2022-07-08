@@ -13,9 +13,15 @@
 		535AEE972874F00B00E1D9FD /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 535AEE952874F00B00E1D9FD /* Main.storyboard */; };
 		535AEE992874F00E00E1D9FD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 535AEE982874F00E00E1D9FD /* Assets.xcassets */; };
 		535AEE9C2874F00E00E1D9FD /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 535AEE9A2874F00E00E1D9FD /* LaunchScreen.storyboard */; };
-		535AEEA72874F00F00E1D9FD /* Meli_ChallengeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 535AEEA62874F00F00E1D9FD /* Meli_ChallengeTests.swift */; };
 		535AEEB12874F00F00E1D9FD /* Meli_ChallengeUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 535AEEB02874F00F00E1D9FD /* Meli_ChallengeUITests.swift */; };
 		535AEEB32874F00F00E1D9FD /* Meli_ChallengeUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 535AEEB22874F00F00E1D9FD /* Meli_ChallengeUITestsLaunchTests.swift */; };
+		535AEEC128771F9900E1D9FD /* HTTPClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 535AEEC028771F9900E1D9FD /* HTTPClient.swift */; };
+		535AEEC32877211400E1D9FD /* Endpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 535AEEC22877211400E1D9FD /* Endpoint.swift */; };
+		535AEEC52877218A00E1D9FD /* RequestMethod.swift in Sources */ = {isa = PBXBuildFile; fileRef = 535AEEC42877218A00E1D9FD /* RequestMethod.swift */; };
+		535AEEC7287721C200E1D9FD /* RequestError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 535AEEC6287721C200E1D9FD /* RequestError.swift */; };
+		535AEEC92877231100E1D9FD /* HTTPClientTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 535AEEC82877231100E1D9FD /* HTTPClientTests.swift */; };
+		535AEECC287723E400E1D9FD /* MockURLProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 535AEECB287723E400E1D9FD /* MockURLProtocol.swift */; };
+		535AEECF287724BF00E1D9FD /* MockModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 535AEECE287724BF00E1D9FD /* MockModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -45,10 +51,16 @@
 		535AEE9B2874F00E00E1D9FD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		535AEE9D2874F00E00E1D9FD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		535AEEA22874F00F00E1D9FD /* Meli ChallengeTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Meli ChallengeTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
-		535AEEA62874F00F00E1D9FD /* Meli_ChallengeTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Meli_ChallengeTests.swift; sourceTree = "<group>"; };
 		535AEEAC2874F00F00E1D9FD /* Meli ChallengeUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Meli ChallengeUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		535AEEB02874F00F00E1D9FD /* Meli_ChallengeUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Meli_ChallengeUITests.swift; sourceTree = "<group>"; };
 		535AEEB22874F00F00E1D9FD /* Meli_ChallengeUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Meli_ChallengeUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		535AEEC028771F9900E1D9FD /* HTTPClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPClient.swift; sourceTree = "<group>"; };
+		535AEEC22877211400E1D9FD /* Endpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Endpoint.swift; sourceTree = "<group>"; };
+		535AEEC42877218A00E1D9FD /* RequestMethod.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestMethod.swift; sourceTree = "<group>"; };
+		535AEEC6287721C200E1D9FD /* RequestError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestError.swift; sourceTree = "<group>"; };
+		535AEEC82877231100E1D9FD /* HTTPClientTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPClientTests.swift; sourceTree = "<group>"; };
+		535AEECB287723E400E1D9FD /* MockURLProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockURLProtocol.swift; sourceTree = "<group>"; };
+		535AEECE287724BF00E1D9FD /* MockModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,6 +111,8 @@
 		535AEE8E2874F00B00E1D9FD /* Meli Challenge */ = {
 			isa = PBXGroup;
 			children = (
+				535AEECD2877249C00E1D9FD /* Models */,
+				535AEEBF28771F7100E1D9FD /* Network */,
 				535AEE8F2874F00B00E1D9FD /* AppDelegate.swift */,
 				535AEE912874F00B00E1D9FD /* SceneDelegate.swift */,
 				535AEE932874F00B00E1D9FD /* ViewController.swift */,
@@ -113,7 +127,8 @@
 		535AEEA52874F00F00E1D9FD /* Meli ChallengeTests */ = {
 			isa = PBXGroup;
 			children = (
-				535AEEA62874F00F00E1D9FD /* Meli_ChallengeTests.swift */,
+				535AEECA287723D000E1D9FD /* Mocks */,
+				535AEEC82877231100E1D9FD /* HTTPClientTests.swift */,
 			);
 			path = "Meli ChallengeTests";
 			sourceTree = "<group>";
@@ -125,6 +140,33 @@
 				535AEEB22874F00F00E1D9FD /* Meli_ChallengeUITestsLaunchTests.swift */,
 			);
 			path = "Meli ChallengeUITests";
+			sourceTree = "<group>";
+		};
+		535AEEBF28771F7100E1D9FD /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				535AEEC028771F9900E1D9FD /* HTTPClient.swift */,
+				535AEEC22877211400E1D9FD /* Endpoint.swift */,
+				535AEEC42877218A00E1D9FD /* RequestMethod.swift */,
+				535AEEC6287721C200E1D9FD /* RequestError.swift */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
+		535AEECA287723D000E1D9FD /* Mocks */ = {
+			isa = PBXGroup;
+			children = (
+				535AEECB287723E400E1D9FD /* MockURLProtocol.swift */,
+				535AEECE287724BF00E1D9FD /* MockModel.swift */,
+			);
+			path = Mocks;
+			sourceTree = "<group>";
+		};
+		535AEECD2877249C00E1D9FD /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -198,6 +240,7 @@
 					};
 					535AEEA12874F00F00E1D9FD = {
 						CreatedOnToolsVersion = 13.3;
+						LastSwiftMigration = 1330;
 						TestTargetID = 535AEE8B2874F00B00E1D9FD;
 					};
 					535AEEAB2874F00F00E1D9FD = {
@@ -258,9 +301,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				535AEEC7287721C200E1D9FD /* RequestError.swift in Sources */,
 				535AEE942874F00B00E1D9FD /* ViewController.swift in Sources */,
 				535AEE902874F00B00E1D9FD /* AppDelegate.swift in Sources */,
+				535AEEC128771F9900E1D9FD /* HTTPClient.swift in Sources */,
 				535AEE922874F00B00E1D9FD /* SceneDelegate.swift in Sources */,
+				535AEEC52877218A00E1D9FD /* RequestMethod.swift in Sources */,
+				535AEEC32877211400E1D9FD /* Endpoint.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -268,7 +315,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				535AEEA72874F00F00E1D9FD /* Meli_ChallengeTests.swift in Sources */,
+				535AEECF287724BF00E1D9FD /* MockModel.swift in Sources */,
+				535AEEC92877231100E1D9FD /* HTTPClientTests.swift in Sources */,
+				535AEECC287723E400E1D9FD /* MockURLProtocol.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -437,7 +486,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 2KYBBX244U;
+				DEVELOPMENT_TEAM = F6W6AB7D4G;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "Meli Challenge/Info.plist";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -465,7 +514,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 2KYBBX244U;
+				DEVELOPMENT_TEAM = F6W6AB7D4G;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "Meli Challenge/Info.plist";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -491,15 +540,22 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 2KYBBX244U;
+				DEVELOPMENT_TEAM = F6W6AB7D4G;
 				GENERATE_INFOPLIST_FILE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 15.4;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.yoavzoldan.Meli-ChallengeTests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Meli Challenge.app/Meli Challenge";
@@ -511,11 +567,17 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 2KYBBX244U;
+				DEVELOPMENT_TEAM = F6W6AB7D4G;
 				GENERATE_INFOPLIST_FILE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 15.4;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.yoavzoldan.Meli-ChallengeTests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -532,7 +594,7 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 2KYBBX244U;
+				DEVELOPMENT_TEAM = F6W6AB7D4G;
 				GENERATE_INFOPLIST_FILE = YES;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.yoavzoldan.Meli-ChallengeUITests";
@@ -550,7 +612,7 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 2KYBBX244U;
+				DEVELOPMENT_TEAM = F6W6AB7D4G;
 				GENERATE_INFOPLIST_FILE = YES;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.yoavzoldan.Meli-ChallengeUITests";
