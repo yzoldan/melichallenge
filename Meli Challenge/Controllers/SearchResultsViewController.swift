@@ -11,9 +11,8 @@ class SearchResultsViewController: UIViewController {
     
     // MARK: - Properties
     var searchResponse: SearchResponse
-    private var items: [Item] {
-        return searchResponse.results
-    }
+    private var items = [Item]()
+    private var loading = false
     
     // MARK: - Views
     private lazy var collectionView: UICollectionView = {
@@ -32,6 +31,7 @@ class SearchResultsViewController: UIViewController {
     
     init(response: SearchResponse) {
         self.searchResponse = response
+        self.items = searchResponse.results
         
         super.init(nibName: nil, bundle: nil)
     }
@@ -71,6 +71,24 @@ class SearchResultsViewController: UIViewController {
     private func refresh() {
         collectionView.reloadData()
     }
+    
+    private func loadNextPage() async {
+        guard !loading else { return }
+        guard searchResponse.paging.total > items.count else { return }
+        loading = true
+        let result = await ApiManager().searchItems(forQuery: searchResponse.query, limit: searchResponse.paging.limit, offset: items.count)
+        switch result {
+        case .failure(let error):
+            let alertVC = UIAlertController(title: "Error", message: error.customMessage, preferredStyle: .alert)
+            alertVC.addAction(UIAlertAction(title: "OK", style: .default))
+            present(alertVC, animated: true)
+        case .success(let newResponse):
+            searchResponse = newResponse
+            items.append(contentsOf: searchResponse.results)
+            collectionView.reloadData()
+        }
+        loading = false
+    }
 }
 
 // MARK: - UICollectionView
@@ -89,6 +107,14 @@ extension SearchResultsViewController: UICollectionViewDelegate, UICollectionVie
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: ItemCollectionViewCell.identifier, for: indexPath) as! ItemCollectionViewCell
         cell.configure(with: items[indexPath.item])
         return cell
+    }
+    
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        if scrollView.reachedBottom {
+            Task {
+                await loadNextPage()
+            }
+        }
     }
 }
 
