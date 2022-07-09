@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import SwiftUI
 
 class SearchResultsViewController: UIViewController {
     
@@ -98,6 +99,7 @@ extension SearchResultsViewController: UICollectionViewDelegate, UICollectionVie
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        // Calculates number of columns based on screen width and ideal item width. It ensures a minimum of two columns
         let columns = max(2, Int(collectionView.width / ItemCollectionViewCell.idealWidth))
         let size = CGSize(width: collectionView.width / CGFloat(columns), height: ItemCollectionViewCell.idealHeight)
         return size
@@ -109,6 +111,13 @@ extension SearchResultsViewController: UICollectionViewDelegate, UICollectionVie
         return cell
     }
     
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        collectionView.deselectItem(at: indexPath, animated: true)
+        let hostVC = UIHostingController(rootView: ItemView(item: items[indexPath.item]))
+        navigationController?.pushViewController(hostVC, animated: true)
+    }
+    
+    // Infinite scroll
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
         if scrollView.reachedBottom {
             Task {

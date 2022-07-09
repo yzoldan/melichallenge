@@ -21,6 +21,13 @@ class ItemCollectionViewCell: UICollectionViewCell {
     private var widthWithPadding: CGFloat {
         return contentView.width - (2 * padding)
     }
+    override var isSelected: Bool {
+        didSet {
+            UIView.animate(withDuration: 0.1) {
+                self.backgroundColor = self.isSelected ? .secondarySystemBackground : .clear
+            } completion: { _ in }
+        }
+    }
     
     // MARK: - Views
     

@@ -34,6 +34,7 @@
 		53A4E9222878EB0600DC4B92 /* SDWebImage in Frameworks */ = {isa = PBXBuildFile; productRef = 53A4E9212878EB0600DC4B92 /* SDWebImage */; };
 		53A4E9242878F06500DC4B92 /* UIImage+Meli.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53A4E9232878F06500DC4B92 /* UIImage+Meli.swift */; };
 		53A4E9262878FA6B00DC4B92 /* Double+Meli.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53A4E9252878FA6B00DC4B92 /* Double+Meli.swift */; };
+		53A4E92A2879138100DC4B92 /* ItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53A4E9292879138100DC4B92 /* ItemView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -84,6 +85,7 @@
 		53A4E91E2878DBE500DC4B92 /* ItemCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemCollectionViewCell.swift; sourceTree = "<group>"; };
 		53A4E9232878F06500DC4B92 /* UIImage+Meli.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+Meli.swift"; sourceTree = "<group>"; };
 		53A4E9252878FA6B00DC4B92 /* Double+Meli.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Double+Meli.swift"; sourceTree = "<group>"; };
+		53A4E9292879138100DC4B92 /* ItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -224,6 +226,7 @@
 			children = (
 				535AEE952874F00B00E1D9FD /* Main.storyboard */,
 				53A4E91E2878DBE500DC4B92 /* ItemCollectionViewCell.swift */,
+				53A4E9292879138100DC4B92 /* ItemView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -369,6 +372,7 @@
 				53A4E91528789A1600DC4B92 /* UIColor+Meli.swift in Sources */,
 				53A4E9262878FA6B00DC4B92 /* Double+Meli.swift in Sources */,
 				53A4E9182878BC1300DC4B92 /* SearchResultsViewController.swift in Sources */,
+				53A4E92A2879138100DC4B92 /* ItemView.swift in Sources */,
 				53A4E90A287889F800DC4B92 /* ApiManager.swift in Sources */,
 				53A4E91C2878BC7300DC4B92 /* UIScrollView+Meli.swift in Sources */,
 				53A4E9122878962F00DC4B92 /* Constants.swift in Sources */,
