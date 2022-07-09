@@ -27,6 +27,13 @@
 		53A4E910287894C300DC4B92 /* SearchResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53A4E90F287894C300DC4B92 /* SearchResponse.swift */; };
 		53A4E9122878962F00DC4B92 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53A4E9112878962F00DC4B92 /* Constants.swift */; };
 		53A4E91528789A1600DC4B92 /* UIColor+Meli.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53A4E91428789A1600DC4B92 /* UIColor+Meli.swift */; };
+		53A4E9182878BC1300DC4B92 /* SearchResultsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53A4E9172878BC1300DC4B92 /* SearchResultsViewController.swift */; };
+		53A4E91A2878BC2900DC4B92 /* UIView+Meli.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53A4E9192878BC2900DC4B92 /* UIView+Meli.swift */; };
+		53A4E91C2878BC7300DC4B92 /* UIScrollView+Meli.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53A4E91B2878BC7300DC4B92 /* UIScrollView+Meli.swift */; };
+		53A4E91F2878DBE500DC4B92 /* ItemCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53A4E91E2878DBE500DC4B92 /* ItemCollectionViewCell.swift */; };
+		53A4E9222878EB0600DC4B92 /* SDWebImage in Frameworks */ = {isa = PBXBuildFile; productRef = 53A4E9212878EB0600DC4B92 /* SDWebImage */; };
+		53A4E9242878F06500DC4B92 /* UIImage+Meli.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53A4E9232878F06500DC4B92 /* UIImage+Meli.swift */; };
+		53A4E9262878FA6B00DC4B92 /* Double+Meli.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53A4E9252878FA6B00DC4B92 /* Double+Meli.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -71,6 +78,12 @@
 		53A4E90F287894C300DC4B92 /* SearchResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResponse.swift; sourceTree = "<group>"; };
 		53A4E9112878962F00DC4B92 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		53A4E91428789A1600DC4B92 /* UIColor+Meli.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Meli.swift"; sourceTree = "<group>"; };
+		53A4E9172878BC1300DC4B92 /* SearchResultsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResultsViewController.swift; sourceTree = "<group>"; };
+		53A4E9192878BC2900DC4B92 /* UIView+Meli.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Meli.swift"; sourceTree = "<group>"; };
+		53A4E91B2878BC7300DC4B92 /* UIScrollView+Meli.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIScrollView+Meli.swift"; sourceTree = "<group>"; };
+		53A4E91E2878DBE500DC4B92 /* ItemCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemCollectionViewCell.swift; sourceTree = "<group>"; };
+		53A4E9232878F06500DC4B92 /* UIImage+Meli.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+Meli.swift"; sourceTree = "<group>"; };
+		53A4E9252878FA6B00DC4B92 /* Double+Meli.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Double+Meli.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -78,6 +91,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				53A4E9222878EB0600DC4B92 /* SDWebImage in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -102,6 +116,7 @@
 			isa = PBXGroup;
 			children = (
 				535AEE8E2874F00B00E1D9FD /* Meli Challenge */,
+				53A4E91328789A0200DC4B92 /* Extensions */,
 				535AEEA52874F00F00E1D9FD /* Meli ChallengeTests */,
 				535AEEAF2874F00F00E1D9FD /* Meli ChallengeUITests */,
 				535AEE8D2874F00B00E1D9FD /* Products */,
@@ -121,13 +136,12 @@
 		535AEE8E2874F00B00E1D9FD /* Meli Challenge */ = {
 			isa = PBXGroup;
 			children = (
-				53A4E91328789A0200DC4B92 /* Extensions */,
-				535AEECD2877249C00E1D9FD /* Models */,
-				535AEEBF28771F7100E1D9FD /* Network */,
 				535AEE8F2874F00B00E1D9FD /* AppDelegate.swift */,
 				535AEE912874F00B00E1D9FD /* SceneDelegate.swift */,
-				535AEE932874F00B00E1D9FD /* SearchViewController.swift */,
-				535AEE952874F00B00E1D9FD /* Main.storyboard */,
+				535AEEBF28771F7100E1D9FD /* Network */,
+				535AEECD2877249C00E1D9FD /* Models */,
+				53A4E9162878BBC400DC4B92 /* Controllers */,
+				53A4E91D2878DBBC00DC4B92 /* Views */,
 				535AEE982874F00E00E1D9FD /* Assets.xcassets */,
 				535AEE9A2874F00E00E1D9FD /* LaunchScreen.storyboard */,
 				535AEE9D2874F00E00E1D9FD /* Info.plist */,
@@ -188,8 +202,30 @@
 			isa = PBXGroup;
 			children = (
 				53A4E91428789A1600DC4B92 /* UIColor+Meli.swift */,
+				53A4E9192878BC2900DC4B92 /* UIView+Meli.swift */,
+				53A4E91B2878BC7300DC4B92 /* UIScrollView+Meli.swift */,
+				53A4E9232878F06500DC4B92 /* UIImage+Meli.swift */,
+				53A4E9252878FA6B00DC4B92 /* Double+Meli.swift */,
 			);
 			path = Extensions;
+			sourceTree = "<group>";
+		};
+		53A4E9162878BBC400DC4B92 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				535AEE932874F00B00E1D9FD /* SearchViewController.swift */,
+				53A4E9172878BC1300DC4B92 /* SearchResultsViewController.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		53A4E91D2878DBBC00DC4B92 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				535AEE952874F00B00E1D9FD /* Main.storyboard */,
+				53A4E91E2878DBE500DC4B92 /* ItemCollectionViewCell.swift */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -208,6 +244,9 @@
 			dependencies = (
 			);
 			name = "Meli Challenge";
+			packageProductDependencies = (
+				53A4E9212878EB0600DC4B92 /* SDWebImage */,
+			);
 			productName = "Meli Challenge";
 			productReference = 535AEE8C2874F00B00E1D9FD /* Meli Challenge.app */;
 			productType = "com.apple.product-type.application";
@@ -281,6 +320,9 @@
 				Base,
 			);
 			mainGroup = 535AEE832874F00B00E1D9FD;
+			packageReferences = (
+				53A4E9202878EB0600DC4B92 /* XCRemoteSwiftPackageReference "SDWebImage" */,
+			);
 			productRefGroup = 535AEE8D2874F00B00E1D9FD /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -325,15 +367,21 @@
 			buildActionMask = 2147483647;
 			files = (
 				53A4E91528789A1600DC4B92 /* UIColor+Meli.swift in Sources */,
+				53A4E9262878FA6B00DC4B92 /* Double+Meli.swift in Sources */,
+				53A4E9182878BC1300DC4B92 /* SearchResultsViewController.swift in Sources */,
 				53A4E90A287889F800DC4B92 /* ApiManager.swift in Sources */,
+				53A4E91C2878BC7300DC4B92 /* UIScrollView+Meli.swift in Sources */,
 				53A4E9122878962F00DC4B92 /* Constants.swift in Sources */,
 				53A4E90C2878939900DC4B92 /* Item.swift in Sources */,
 				535AEEC7287721C200E1D9FD /* RequestError.swift in Sources */,
 				535AEE942874F00B00E1D9FD /* SearchViewController.swift in Sources */,
+				53A4E91A2878BC2900DC4B92 /* UIView+Meli.swift in Sources */,
+				53A4E9242878F06500DC4B92 /* UIImage+Meli.swift in Sources */,
 				535AEE902874F00B00E1D9FD /* AppDelegate.swift in Sources */,
 				535AEEC128771F9900E1D9FD /* HTTPClient.swift in Sources */,
 				53A4E910287894C300DC4B92 /* SearchResponse.swift in Sources */,
 				535AEE922874F00B00E1D9FD /* SceneDelegate.swift in Sources */,
+				53A4E91F2878DBE500DC4B92 /* ItemCollectionViewCell.swift in Sources */,
 				535AEEC52877218A00E1D9FD /* RequestMethod.swift in Sources */,
 				535AEEC32877211400E1D9FD /* Endpoint.swift in Sources */,
 			);
@@ -692,6 +740,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		53A4E9202878EB0600DC4B92 /* XCRemoteSwiftPackageReference "SDWebImage" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SDWebImage/SDWebImage.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		53A4E9212878EB0600DC4B92 /* SDWebImage */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 53A4E9202878EB0600DC4B92 /* XCRemoteSwiftPackageReference "SDWebImage" */;
+			productName = SDWebImage;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 535AEE842874F00B00E1D9FD /* Project object */;
 }

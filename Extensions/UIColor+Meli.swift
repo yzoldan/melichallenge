@@ -10,4 +10,5 @@ import UIKit
 
 extension UIColor {
     static let yellowBrandColor = UIColor(named: "YellowBrandColor")!
+    static let greenBrandColor = UIColor(named: "GreenBrandColor")!
 }

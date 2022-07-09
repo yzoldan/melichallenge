@@ -8,9 +8,13 @@
 import UIKit
 
 class SearchViewController: UIViewController {
-
+    
+    // MARK: - Outlets
+    
     @IBOutlet weak var searchTextField: UITextField!
     @IBOutlet weak var searchButton: UIButton!
+    
+    // MARK: - Properties
     
     var apiManager = ApiManager()
     var loading = false {
@@ -19,11 +23,21 @@ class SearchViewController: UIViewController {
         }
     }
     
+    // MARK: - Lifecycle
+
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        // Navigation Bar background color
+        let appearance = UINavigationBarAppearance()
+        appearance.configureWithOpaqueBackground()
+        appearance.backgroundColor = .yellowBrandColor
+        navigationController?.navigationBar.standardAppearance = appearance
+        navigationController?.navigationBar.scrollEdgeAppearance = appearance
         searchTextField.delegate = self
     }
+    
+    // MARK: - Methods
     
     private func searchItems() async {
         guard !loading else { return }
@@ -51,7 +65,8 @@ class SearchViewController: UIViewController {
     }
     
     private func handleSuccess(_ response: SearchResponse) {
-        // TODO: pass response to results vc
+        let resultsVC = SearchResultsViewController(response: response)
+        navigationController?.pushViewController(resultsVC, animated: true)
     }
 
     @IBAction func searchTapped(_ sender: UIButton) {
@@ -62,6 +77,8 @@ class SearchViewController: UIViewController {
     }
     
 }
+
+// MARK: - UITextFieldDelegate
 
 extension SearchViewController: UITextFieldDelegate {
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
