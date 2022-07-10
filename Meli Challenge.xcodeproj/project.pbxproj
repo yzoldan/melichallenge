@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5321441D287A665F0043D098 /* IQKeyboardManagerSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 5321441C287A665F0043D098 /* IQKeyboardManagerSwift */; };
 		535AEE902874F00B00E1D9FD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 535AEE8F2874F00B00E1D9FD /* AppDelegate.swift */; };
 		535AEE922874F00B00E1D9FD /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 535AEE912874F00B00E1D9FD /* SceneDelegate.swift */; };
 		535AEE942874F00B00E1D9FD /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 535AEE932874F00B00E1D9FD /* SearchViewController.swift */; };
@@ -98,6 +99,7 @@
 			files = (
 				53A4E92D2879167500DC4B92 /* SDWebImageSwiftUI in Frameworks */,
 				53A4E9222878EB0600DC4B92 /* SDWebImage in Frameworks */,
+				5321441D287A665F0043D098 /* IQKeyboardManagerSwift in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -255,6 +257,7 @@
 			packageProductDependencies = (
 				53A4E9212878EB0600DC4B92 /* SDWebImage */,
 				53A4E92C2879167500DC4B92 /* SDWebImageSwiftUI */,
+				5321441C287A665F0043D098 /* IQKeyboardManagerSwift */,
 			);
 			productName = "Meli Challenge";
 			productReference = 535AEE8C2874F00B00E1D9FD /* Meli Challenge.app */;
@@ -332,6 +335,7 @@
 			packageReferences = (
 				53A4E9202878EB0600DC4B92 /* XCRemoteSwiftPackageReference "SDWebImage" */,
 				53A4E92B2879167500DC4B92 /* XCRemoteSwiftPackageReference "SDWebImageSwiftUI" */,
+				5321441B287A665F0043D098 /* XCRemoteSwiftPackageReference "IQKeyboardManager" */,
 			);
 			productRefGroup = 535AEE8D2874F00B00E1D9FD /* Products */;
 			projectDirPath = "";
@@ -754,6 +758,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		5321441B287A665F0043D098 /* XCRemoteSwiftPackageReference "IQKeyboardManager" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/hackiftekhar/IQKeyboardManager";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
 		53A4E9202878EB0600DC4B92 /* XCRemoteSwiftPackageReference "SDWebImage" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/SDWebImage/SDWebImage.git";
@@ -773,6 +785,11 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		5321441C287A665F0043D098 /* IQKeyboardManagerSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 5321441B287A665F0043D098 /* XCRemoteSwiftPackageReference "IQKeyboardManager" */;
+			productName = IQKeyboardManagerSwift;
+		};
 		53A4E9212878EB0600DC4B92 /* SDWebImage */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 53A4E9202878EB0600DC4B92 /* XCRemoteSwiftPackageReference "SDWebImage" */;

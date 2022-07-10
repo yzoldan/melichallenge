@@ -13,7 +13,7 @@ class ItemCollectionViewCell: UICollectionViewCell {
     // MARK: - Properties
     
     static let identifier = "ItemCollectionViewCell"
-    static let idealHeight: CGFloat = 350
+    static let idealHeight: CGFloat = 320
     static let idealWidth: CGFloat = 200
     
     private var item: Item!
@@ -94,9 +94,9 @@ class ItemCollectionViewCell: UICollectionViewCell {
         super.layoutSubviews()
         
         productImageView.frame = CGRect(x: 2,
-                                        y: 2,
+                                        y: 4,
                                         width: contentView.width - 4,
-                                        height: 150)
+                                        height: 120)
         titleLabel.frame = CGRect(x: padding,
                                   y: productImageView.bottom + padding,
                                   width: widthWithPadding,

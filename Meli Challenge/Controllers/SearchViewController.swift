@@ -34,6 +34,8 @@ class SearchViewController: UIViewController {
         appearance.backgroundColor = .yellowBrandColor
         navigationController?.navigationBar.standardAppearance = appearance
         navigationController?.navigationBar.scrollEdgeAppearance = appearance
+        
+        searchButton.tintColor = .blueBrandColor
         searchTextField.delegate = self
     }
     
@@ -52,7 +54,7 @@ class SearchViewController: UIViewController {
     private func searchItems() async {
         guard !loading else { return }
         guard let query = searchTextField.text else { return }
-//        guard !query.isEmpty else { return }
+        guard !query.isEmpty else { return }
         
         loading = true
         let result = await apiManager.searchItems(forQuery: query)

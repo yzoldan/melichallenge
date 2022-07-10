@@ -20,46 +20,48 @@ struct ItemView: View {
     }
     
     var body: some View {
-        ScrollView {
-            VStack(alignment: .leading, spacing: 8) {
-                Text("\(item.conditionDescription) | \(item.sold_quantity) vendidos")
-                    .foregroundColor(.secondary)
-                    .font(.caption)
-                    .padding([.top])
-                Text(item.title)
-                TabView {
-                    ForEach(validPictures) { picture in
-                        VStack {
-                            pictureView(for: picture)
-                            Spacer(minLength: 25)
+        GeometryReader { geometry in
+            ScrollView(.vertical, showsIndicators: false) {
+                VStack(alignment: .leading, spacing: 8) {
+                    Text("\(item.conditionDescription) | \(item.sold_quantity) vendidos")
+                        .foregroundColor(.secondary)
+                        .font(.caption)
+                        .padding([.top])
+                    Text(item.title)
+                    TabView {
+                        ForEach(validPictures) { picture in
+                            VStack {
+                                pictureView(for: picture)
+                                Spacer(minLength: 40)
+                            }
                         }
                     }
-                }
-                .frame(height: 250, alignment: .center)
-                .tabViewStyle(PageTabViewStyle())
-                Text(item.price.toCurrency(currencyCode: item.currency_id))
-                    .font(.title)
-                Group {
-                    Text("en ") +
-                    Text(item.installments.description)
-                        .foregroundColor(Color(uiColor: .greenBrandColor))
-                        .font(.headline)
-                }
-                .padding([.bottom], 8)
-                Text("Características")
-                    .font(.title2)
-                    .padding([.bottom], 8)
-                ForEach(validAttributes) { att in
-                    HStack(alignment: .center, spacing: 8) {
-                        Text(att.name ?? "")
-                            .font(.callout)
-                            .foregroundColor(.secondary)
-                            .frame(maxWidth: 135, alignment: .leading)
-                        Divider()
-                        Text(att.value_name ?? "")
+                    .frame(height: 300, alignment: .center)
+                    .tabViewStyle(PageTabViewStyle())
+                    Text(item.price.toCurrency(currencyCode: item.currency_id))
+                        .font(.title)
+                    Group {
+                        Text("en ") +
+                        Text(item.installments.description)
+                            .foregroundColor(Color(uiColor: .greenBrandColor))
+                            .font(.headline)
                     }
+                    .padding([.bottom], 8)
+                    Text("Características")
+                        .font(.title2)
+                        .padding([.bottom], 8)
+                    ForEach(validAttributes) { att in
+                        HStack(alignment: .center, spacing: 8) {
+                            Text(att.name ?? "")
+                                .font(.callout)
+                                .foregroundColor(.secondary)
+                                .frame(maxWidth: min(geometry.size.width / 2, 200), alignment: .leading)
+                            Divider()
+                            Text(att.value_name ?? "")
+                        }
+                    }
+                    Spacer()
                 }
-                Spacer()
             }
         }
         .padding([.leading, .trailing])

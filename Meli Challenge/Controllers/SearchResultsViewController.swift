@@ -23,6 +23,9 @@ class SearchResultsViewController: UIViewController {
         let collectionView = UICollectionView(frame: .zero, collectionViewLayout: layout)
         collectionView.register(ItemCollectionViewCell.self, forCellWithReuseIdentifier: ItemCollectionViewCell.identifier)
         collectionView.showsVerticalScrollIndicator = false
+        let refreshControl = UIRefreshControl()
+        refreshControl.addTarget(self, action: #selector(refresh), for: .valueChanged)
+        collectionView.refreshControl = refreshControl
         collectionView.delegate = self
         collectionView.dataSource = self
         return collectionView
@@ -47,7 +50,7 @@ class SearchResultsViewController: UIViewController {
         title = "Búsqueda: \(searchResponse.query)"
         view.backgroundColor = .white
         addSubViews()
-        refresh()
+        collectionView.reloadData()
     }
     
     private func addSubViews() {
@@ -62,22 +65,24 @@ class SearchResultsViewController: UIViewController {
     
     override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
         coordinator.animate { _ in
-            self.refresh()
+            self.collectionView.reloadData()
         }
     }
     
     
     // MARK: - Methods
 
-    private func refresh() {
-        collectionView.reloadData()
+    @objc private func refresh() {
+        Task {
+            await loadItems(query: searchResponse.query, limit: searchResponse.paging.limit, offset: 0)
+        }
     }
     
-    private func loadNextPage() async {
+    private func loadItems(query: String, limit: Int, offset: Int) async {
         guard !loading else { return }
         guard searchResponse.paging.total > items.count else { return }
         loading = true
-        let result = await ApiManager().searchItems(forQuery: searchResponse.query, limit: searchResponse.paging.limit, offset: items.count)
+        let result = await ApiManager().searchItems(forQuery: query, limit: limit, offset: offset)
         switch result {
         case .failure(let error):
             let alertVC = UIAlertController(title: "Error", message: error.customMessage, preferredStyle: .alert)
@@ -88,7 +93,12 @@ class SearchResultsViewController: UIViewController {
             items.append(contentsOf: searchResponse.results)
             collectionView.reloadData()
         }
+        collectionView.refreshControl?.endRefreshing()
         loading = false
+    }
+    
+    private func loadNextPage() async {
+        await loadItems(query: searchResponse.query, limit: searchResponse.paging.limit, offset: items.count)
     }
 }
 
@@ -103,6 +113,10 @@ extension SearchResultsViewController: UICollectionViewDelegate, UICollectionVie
         let columns = max(2, Int(collectionView.width / ItemCollectionViewCell.idealWidth))
         let size = CGSize(width: collectionView.width / CGFloat(columns), height: ItemCollectionViewCell.idealHeight)
         return size
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
+        return 0
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
