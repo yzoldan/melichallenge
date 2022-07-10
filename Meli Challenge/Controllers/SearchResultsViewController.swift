@@ -48,6 +48,8 @@ class SearchResultsViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        overrideUserInterfaceStyle = .light
 
         title = "Búsqueda: \(searchResponse.query)"
         view.backgroundColor = .white
@@ -153,7 +155,9 @@ extension SearchResultsViewController: UICollectionViewDelegate, UICollectionVie
                 alertVC.addAction(UIAlertAction(title: "OK", style: .default))
                 present(alertVC, animated: true)
             case .success(let pictures):
-                let hostVC = UIHostingController(rootView: ItemView(item: item, pictures: pictures))
+                let itemView = ItemView(item: item, pictures: pictures)
+                    .preferredColorScheme(.light)
+                let hostVC = UIHostingController(rootView: itemView)
                 navigationController?.pushViewController(hostVC, animated: true)
             }
             hideIndicatorView()

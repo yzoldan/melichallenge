@@ -28,6 +28,9 @@ class SearchViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        overrideUserInterfaceStyle = .light
+        navigationController?.overrideUserInterfaceStyle = .light
+        
         // Navigation Bar background color
         let appearance = UINavigationBarAppearance()
         appearance.configureWithOpaqueBackground()
