@@ -35,6 +35,8 @@
 		53A4E9242878F06500DC4B92 /* UIImage+Meli.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53A4E9232878F06500DC4B92 /* UIImage+Meli.swift */; };
 		53A4E9262878FA6B00DC4B92 /* Double+Meli.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53A4E9252878FA6B00DC4B92 /* Double+Meli.swift */; };
 		53A4E92A2879138100DC4B92 /* ItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53A4E9292879138100DC4B92 /* ItemView.swift */; };
+		53A4E92D2879167500DC4B92 /* SDWebImageSwiftUI in Frameworks */ = {isa = PBXBuildFile; productRef = 53A4E92C2879167500DC4B92 /* SDWebImageSwiftUI */; };
+		53A4E92F287A4BAA00DC4B92 /* Picture.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53A4E92E287A4BAA00DC4B92 /* Picture.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -86,6 +88,7 @@
 		53A4E9232878F06500DC4B92 /* UIImage+Meli.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+Meli.swift"; sourceTree = "<group>"; };
 		53A4E9252878FA6B00DC4B92 /* Double+Meli.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Double+Meli.swift"; sourceTree = "<group>"; };
 		53A4E9292879138100DC4B92 /* ItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemView.swift; sourceTree = "<group>"; };
+		53A4E92E287A4BAA00DC4B92 /* Picture.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Picture.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -93,6 +96,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				53A4E92D2879167500DC4B92 /* SDWebImageSwiftUI in Frameworks */,
 				53A4E9222878EB0600DC4B92 /* SDWebImage in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -196,6 +200,7 @@
 				53A4E90B2878939900DC4B92 /* Item.swift */,
 				53A4E90F287894C300DC4B92 /* SearchResponse.swift */,
 				53A4E9112878962F00DC4B92 /* Constants.swift */,
+				53A4E92E287A4BAA00DC4B92 /* Picture.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -249,6 +254,7 @@
 			name = "Meli Challenge";
 			packageProductDependencies = (
 				53A4E9212878EB0600DC4B92 /* SDWebImage */,
+				53A4E92C2879167500DC4B92 /* SDWebImageSwiftUI */,
 			);
 			productName = "Meli Challenge";
 			productReference = 535AEE8C2874F00B00E1D9FD /* Meli Challenge.app */;
@@ -325,6 +331,7 @@
 			mainGroup = 535AEE832874F00B00E1D9FD;
 			packageReferences = (
 				53A4E9202878EB0600DC4B92 /* XCRemoteSwiftPackageReference "SDWebImage" */,
+				53A4E92B2879167500DC4B92 /* XCRemoteSwiftPackageReference "SDWebImageSwiftUI" */,
 			);
 			productRefGroup = 535AEE8D2874F00B00E1D9FD /* Products */;
 			projectDirPath = "";
@@ -385,6 +392,7 @@
 				535AEEC128771F9900E1D9FD /* HTTPClient.swift in Sources */,
 				53A4E910287894C300DC4B92 /* SearchResponse.swift in Sources */,
 				535AEE922874F00B00E1D9FD /* SceneDelegate.swift in Sources */,
+				53A4E92F287A4BAA00DC4B92 /* Picture.swift in Sources */,
 				53A4E91F2878DBE500DC4B92 /* ItemCollectionViewCell.swift in Sources */,
 				535AEEC52877218A00E1D9FD /* RequestMethod.swift in Sources */,
 				535AEEC32877211400E1D9FD /* Endpoint.swift in Sources */,
@@ -754,6 +762,14 @@
 				minimumVersion = 5.0.0;
 			};
 		};
+		53A4E92B2879167500DC4B92 /* XCRemoteSwiftPackageReference "SDWebImageSwiftUI" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SDWebImage/SDWebImageSwiftUI";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -761,6 +777,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 53A4E9202878EB0600DC4B92 /* XCRemoteSwiftPackageReference "SDWebImage" */;
 			productName = SDWebImage;
+		};
+		53A4E92C2879167500DC4B92 /* SDWebImageSwiftUI */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 53A4E92B2879167500DC4B92 /* XCRemoteSwiftPackageReference "SDWebImageSwiftUI" */;
+			productName = SDWebImageSwiftUI;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

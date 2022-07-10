@@ -14,9 +14,14 @@ struct Item: Codable {
     let currency_id: String
     let installments: Installments
     let shipping: Shipping
+    let condition: String
+    let sold_quantity: Int
     let thumbnail: String
     var thumbnailURL: URL? {
         return URL(string: thumbnail)
+    }
+    var conditionDescription: String {
+        return condition == "new" ? "Nuevo" : "Usado"
     }
     
     static let mock = Item(id: "MLC992560003",
@@ -25,6 +30,8 @@ struct Item: Codable {
                            currency_id: "CLP",
                            installments: Installments(quantity: 6, amount: 121665, rate: 0, currency_id: "CLP"),
                            shipping: Shipping(free_shipping: true),
+                           condition: "new",
+                           sold_quantity: 88,
                            thumbnail: "http://http2.mlstatic.com/D_682904-MLA45732843790_042021-I.jpg")
 }
 

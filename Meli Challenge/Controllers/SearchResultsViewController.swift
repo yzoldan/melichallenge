@@ -113,8 +113,20 @@ extension SearchResultsViewController: UICollectionViewDelegate, UICollectionVie
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         collectionView.deselectItem(at: indexPath, animated: true)
-        let hostVC = UIHostingController(rootView: ItemView(item: items[indexPath.item]))
-        navigationController?.pushViewController(hostVC, animated: true)
+        // We load pictures of the item before passing it to the detail view
+        Task {
+            let item = items[indexPath.item]
+            let result = await ApiManager().getItemPictures(withId: item.id)
+            switch result {
+            case .failure(let error):
+                let alertVC = UIAlertController(title: "Error", message: error.customMessage, preferredStyle: .alert)
+                alertVC.addAction(UIAlertAction(title: "OK", style: .default))
+                present(alertVC, animated: true)
+            case .success(let pictures):
+                let hostVC = UIHostingController(rootView: ItemView(item: item, pictures: pictures))
+                navigationController?.pushViewController(hostVC, animated: true)
+            }
+        }
     }
     
     // Infinite scroll

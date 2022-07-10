@@ -27,4 +27,17 @@ class ApiManager {
         let result = await httpClient.sendRequest(endpoint: endpoint, responseModel: SearchResponse.self)
         return result
     }
+    
+    func getItemPictures(withId id: String) async -> Result<Pictures, RequestError> {
+        // Here we use items path to get a hold of an item pictures, everything else we already got from the search query
+        let endpoind = Endpoint(baseURL: baseUrl, path: "/items/\(id)", method: .get)
+        let result = await httpClient.sendRequest(endpoint: endpoind, responseModel: PicturesResponse.self)
+        switch result {
+        case .failure(let error):
+            return .failure(error)
+        case .success(let response):
+            // We unwrap pictures for convenience
+            return .success(response.pictures)
+        }
+    }
 }
