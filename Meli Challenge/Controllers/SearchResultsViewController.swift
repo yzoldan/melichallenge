@@ -31,6 +31,8 @@ class SearchResultsViewController: UIViewController {
         return collectionView
     }()
     
+    private lazy var spinner = SpinnerViewController()
+    
     // MARK: - Lifecycle
     
     init(response: SearchResponse) {
@@ -100,6 +102,19 @@ class SearchResultsViewController: UIViewController {
     private func loadNextPage() async {
         await loadItems(query: searchResponse.query, limit: searchResponse.paging.limit, offset: items.count)
     }
+    
+    private func showIndicatorView() {
+        addChild(spinner)
+        spinner.view.frame = view.frame
+        view.addSubview(spinner.view)
+        spinner.didMove(toParent: self)
+    }
+    
+    private func hideIndicatorView() {
+        spinner.willMove(toParent: nil)
+        spinner.view.removeFromSuperview()
+        spinner.removeFromParent()
+    }
 }
 
 // MARK: - UICollectionView
@@ -128,6 +143,7 @@ extension SearchResultsViewController: UICollectionViewDelegate, UICollectionVie
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         collectionView.deselectItem(at: indexPath, animated: true)
         // We load pictures of the item before passing it to the detail view
+        showIndicatorView()
         Task {
             let item = items[indexPath.item]
             let result = await ApiManager().getItemPictures(withId: item.id)
@@ -140,6 +156,7 @@ extension SearchResultsViewController: UICollectionViewDelegate, UICollectionVie
                 let hostVC = UIHostingController(rootView: ItemView(item: item, pictures: pictures))
                 navigationController?.pushViewController(hostVC, animated: true)
             }
+            hideIndicatorView()
         }
     }
     

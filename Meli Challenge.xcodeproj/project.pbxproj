@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		5321441D287A665F0043D098 /* IQKeyboardManagerSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 5321441C287A665F0043D098 /* IQKeyboardManagerSwift */; };
+		5321441F287A74F00043D098 /* SpinnerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5321441E287A74F00043D098 /* SpinnerViewController.swift */; };
 		535AEE902874F00B00E1D9FD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 535AEE8F2874F00B00E1D9FD /* AppDelegate.swift */; };
 		535AEE922874F00B00E1D9FD /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 535AEE912874F00B00E1D9FD /* SceneDelegate.swift */; };
 		535AEE942874F00B00E1D9FD /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 535AEE932874F00B00E1D9FD /* SearchViewController.swift */; };
@@ -58,6 +59,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		5321441E287A74F00043D098 /* SpinnerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpinnerViewController.swift; sourceTree = "<group>"; };
 		535AEE8C2874F00B00E1D9FD /* Meli Challenge.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Meli Challenge.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		535AEE8F2874F00B00E1D9FD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		535AEE912874F00B00E1D9FD /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -222,6 +224,7 @@
 		53A4E9162878BBC400DC4B92 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				5321441E287A74F00043D098 /* SpinnerViewController.swift */,
 				535AEE932874F00B00E1D9FD /* SearchViewController.swift */,
 				53A4E9172878BC1300DC4B92 /* SearchResultsViewController.swift */,
 			);
@@ -390,6 +393,7 @@
 				53A4E90C2878939900DC4B92 /* Item.swift in Sources */,
 				535AEEC7287721C200E1D9FD /* RequestError.swift in Sources */,
 				535AEE942874F00B00E1D9FD /* SearchViewController.swift in Sources */,
+				5321441F287A74F00043D098 /* SpinnerViewController.swift in Sources */,
 				53A4E91A2878BC2900DC4B92 /* UIView+Meli.swift in Sources */,
 				53A4E9242878F06500DC4B92 /* UIImage+Meli.swift in Sources */,
 				535AEE902874F00B00E1D9FD /* AppDelegate.swift in Sources */,
