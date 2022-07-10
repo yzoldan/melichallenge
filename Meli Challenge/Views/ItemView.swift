@@ -12,6 +12,9 @@ struct ItemView: View {
     
     var item: Item
     var pictures: Pictures
+    var validPictures: Pictures {
+        return pictures.filter({ $0.getUrl() != nil })
+    }
     
     var body: some View {
         VStack(alignment: .leading, spacing: 8) {
@@ -20,12 +23,16 @@ struct ItemView: View {
                 .font(.caption)
                 .padding([.top])
             Text(item.title)
-            WebImage(url: item.thumbnailURL)
-                .resizable()
-                .placeholder(Image(uiImage: .productPlaceholder))
-                .scaledToFit()
-                .frame(height: 200, alignment: .center)
-                .frame(maxWidth: .infinity)
+            TabView {
+                ForEach(validPictures) { picture in
+                    VStack {
+                        pictureView(for: picture)
+                        Spacer(minLength: 25)
+                    }
+                }
+            }
+            .frame(height: 250, alignment: .center)
+            .tabViewStyle(PageTabViewStyle())
             Text(item.price.toCurrency(currencyCode: item.currency_id))
                 .font(.title)
             Group {
@@ -37,6 +44,21 @@ struct ItemView: View {
             Spacer()
         }
         .padding([.leading, .trailing])
+        .onAppear {
+            setupAppearance()
+        }
+    }
+    
+    private func setupAppearance() {
+        UIPageControl.appearance().currentPageIndicatorTintColor = .black
+        UIPageControl.appearance().pageIndicatorTintColor = UIColor.black.withAlphaComponent(0.2)
+      }
+    
+    private func pictureView(for picture: Picture) -> some View {
+        return WebImage(url: picture.getUrl())
+            .resizable()
+            .placeholder(Image(uiImage: .productPlaceholder))
+            .scaledToFit()
     }
 }
 
