@@ -19,6 +19,10 @@ struct Picture: Codable, Identifiable {
     let max_size: String
     let quality: String
     
+    var isValid: Bool {
+        return getUrl() != nil
+    }
+    
     func getUrl() -> URL? {
         return URL(string: url)
     }

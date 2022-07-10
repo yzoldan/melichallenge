@@ -17,6 +17,8 @@ struct Item: Codable {
     let condition: String
     let sold_quantity: Int
     let thumbnail: String
+    let attributes: Attributes
+    
     var thumbnailURL: URL? {
         return URL(string: thumbnail)
     }
@@ -32,7 +34,9 @@ struct Item: Codable {
                            shipping: Shipping(free_shipping: true),
                            condition: "new",
                            sold_quantity: 88,
-                           thumbnail: "http://http2.mlstatic.com/D_682904-MLA45732843790_042021-I.jpg")
+                           thumbnail: "http://http2.mlstatic.com/D_682904-MLA45732843790_042021-I.jpg",
+                           attributes: [Attribute(id: "BRAND",name: "Marca", value_name: "Sony"), Attribute(id: "ITEM_CONDITION",name: "Condición del ítem", value_name: "Nuevo")]
+    )
 }
 
 struct Installments: Codable {
@@ -53,3 +57,15 @@ struct Installments: Codable {
 struct Shipping: Codable {
     let free_shipping: Bool
 }
+
+struct Attribute: Codable, Identifiable {
+    let id: String
+    let name: String?
+    let value_name: String?
+    
+    var isValid: Bool {
+        return name != nil && !name!.isEmpty && value_name != nil && !value_name!.isEmpty
+    }
+}
+
+typealias Attributes = [Attribute]
